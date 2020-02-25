@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- <script type="text/javascript">
+function done(){
+	document.write('Thank You, YOUR MESSAGE HAS BEEN SUBMITTED.')
+	
+	var delay = 2000; // time in milliseconds
+
+	setTimeout(function(){
+		window.history.go(-1); // Simulates a back button click
+	},delay);
+}	
+</script> -->
+
+<div class='row'>
+<div class='col-12'>
+<h1>Contact Us</h1>
+<hr/>
+</div>
+</div>
+<div class='row'>
+<div class='col-6 offset-3'>
+<form method='POST' action=''>
+{% csrf_token %}
+{{ form.as_p }}
+<input type='submit' value='Send' class='btn btn-dark'/>
+</form>
+
+<script type="text/javascript">
+	window.alert("Note: Once you press the submit button your message has been sent.");
+</script>
+
+</div>
+</div>
+</div>
+{% endblock %}
